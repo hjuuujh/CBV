@@ -1,0 +1,23 @@
+{%extends 'base_todos.html' %}
+{%block content%}
+<form method = "POST" action="{% url 'todos:db_insert' %}">
+        {% csrf_token %}
+        <div>
+            <label for = "title">Title</label>
+            <input type="text" name="title" id="title">
+            </div><br>
+            
+            <div>
+            <label for = "contents">Contents</label>
+            <input type="text" name="contents" id="contents">
+            </div><br>
+            
+            <div>
+            <label for = "date">Date</label>
+            <input type= "datetime-local" name="date" id="date">
+            </div><br>
+
+        <input type="submit" value="Insert" /> 
+
+    </form>
+{%endblock%}

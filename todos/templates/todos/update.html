@@ -1,0 +1,23 @@
+
+<form method = "POST" action="{% url 'todos:db_update' id%}">
+{% csrf_token %}
+
+<div>
+<label for = "todo_title">Title</label>
+<input type="text" name="title">
+</div><br>
+
+<div>
+<label for = "todo_contents">Contents</label>
+<input type="text" name="contents">
+</div><br>
+
+<div>
+<label for = "todo_date">Date</label>
+<input type= "datetime-local" name="date">
+</div><br>
+
+
+<input type="submit" value="Update" /> 
+
+</form>

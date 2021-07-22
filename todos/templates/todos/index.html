@@ -1,0 +1,18 @@
+{% extends "base_todos.html" %}
+
+{% block content %}
+
+<h2>Todos List</h2>
+
+{% if todo_list %}
+    <ul>
+    {% for todo in todo_list %}
+        <li><a href="{% url 'todos:todo_detail' todo.id %}">{{ todo.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No todos are available.</p>
+{% endif %}
+<a href="/todos/insert/"><input type="submit" value="New" /></a>
+
+{% endblock %}

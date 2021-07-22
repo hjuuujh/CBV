@@ -1,0 +1,9 @@
+<h1>{{ todo.title }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% csrf_token %}
+<h2>{{ todo.contents }}</h2>
+<h2>{{ todo.pub_date }}</h2>
+
+<a href="{% url 'todos:index' %}"><input type="submit" value="Back" /></a>

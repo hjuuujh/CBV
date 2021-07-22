@@ -1,0 +1,15 @@
+{%extends 'base_todos.html' %}
+{%block content%}
+<h1>{{object.title }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% csrf_token %}
+<h2>{{object.contents }}</h2>
+<h2>{{ object.pub_date }}</h2>
+
+
+<a href="{% url 'todos:index' %}"><input type="submit" value="Back" /></a>
+<a href="/todos/{{object.id }}/delete/"><input type="submit" value="Delete" /></a>
+<a href="/todos/{{ object.id }}/update/"><input type="submit" value="Update" /></a>
+{%endblock%}
